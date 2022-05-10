@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Neo4j data visualization</title>
+    <meta charset="utf-8" lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css"/>
+    <style>
+      #viz {
+        width: 1200px;
+        height: 720px;
+        border: 1px solid #444444;
+      }
+
+      body {
+        color: #d3d3d3;
+        font: 12pt arial;
+        background-color: #222222;
+      }
+    </style>
+    <script>
+      function draw(limit) {
+        var config = {
+          container_id: "viz",
+          server_url: "bolt://localhost:7687",
+          server_user: "neo4j",
+          server_password: "super",
+          arrows: true,
+          physics: {
+            enabled: false
+          },
+          labels: {
+            "Website": {
+              caption: "id",
+              size: "pagerank"
+            }
+          },
+          relationships: {
+            "LINK": {
+              caption: false,
+              thickness: "count"
+            }
+          },
+          initial_cypher: "MATCH r=(n:Website)-[:LINK]->(p:Website) RETURN r ORDER BY n.pagerank DESC LIMIT " + limit
+        }
+
+        var viz = new NeoVis.default(config);
+        viz.render();
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Neo4j graph :</h2>
+    <label for="limit">Nombre de noeuds à afficher (0 - 325'728):</label>
+    <input id="limit" type="number" min="0" max="325728"/>
+    <button id="validate">Valider</button>
+    <script>
+      $("#validate").click(function () {
+        return draw($("#limit").val());
+      });
+    </script>
+    <div id="viz"></div>
+  </body>
+</html>

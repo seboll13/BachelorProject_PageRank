@@ -1,0 +1,6 @@
+*.csv
+*.db.
+Code/neo4j-community-3.5.5/*
+Code/Javascript/node_modules/*
+Thesis/images/*
+Thesis/Doc/*

@@ -1,0 +1,44 @@
+# PAGE RANK
+https://en.wikipedia.org/wiki/PageRank
+https://pdfs.semanticscholar.org/3356/6b740d3cd0c0dde57e13b5da148bef37376f.pdf
+https://web.stanford.edu/class/cs54n/handouts/24-GooglePageRankAlgorithm.pdf
+http://www.cse.unt.edu/~tarau/teaching/NLP/PageRank.pdf
+http://home.ie.cuhk.edu.hk/~wkshum/papers/pagerank.pdf
+https://neo4j.com/docs/graph-algorithms/current/algorithms/page-rank/
+http://www.ccs.neu.edu/home/daikeshi/notes/PageRank.pdf
+https://tel.archives-ouvertes.fr/tel-00667563/document
+
+# OTHER ALGORITHMS
+https://arxiv.org/pdf/1409.0428.pdf
+http://www.quantware.ups-tlse.fr/QWART/cheirank/index.html
+https://www.cs.uic.edu/~sliu/alg.ps
+
+# VISJS AND OTHER DATA
+https://github.com/neo4j-contrib/neovis.js/
+http://visjs.org/network_examples.html
+https://snap.stanford.edu/data/web-NotreDame.html
+https://dumps.wikimedia.org/frwiki/latest/
+
+# NEO4J
+https://marcobonzanini.com/2015/04/06/getting-started-with-neo4j-and-python/
+https://www.youtube.com/watch?v=oXziS-PPIUA
+https://dzone.com/articles/load-csv-neo4j-quickly-and
+https://medium.com/neo4j/experimental-a-networkx-esque-api-for-neo4j-graph-algorithms-4002baac45be
+https://neo4j.com/developer/guide-import-csv/#_super_fast_batch_importer_for_huge_datasets
+https://markhneedham.com/blog/2014/10/23/neo4j-cypher-avoiding-the-eager/
+
+# GRAPH TOOL
+https://medium.com/@ronie/installing-graph-tool-for-python-3-on-anaconda-3f76d9004979
+https://fr.slideshare.net/moskytw/graphtool-in-practice
+
+# PERF COMPARISON
+https://da-14.com/blog/python-vs-nodejs-which-better-your-project
+https://stxnext.com/blog/2018/10/16/python-vs-nodejs-comparison/
+
+# USEFUL COMMANDS
+find . -name '.DS_Store' -type f -delete
+find . -name "*.pyc" -exec rm -f {} \;
+sudo chown -R sebastiencartier ~/anaconda3
+
+https://www.blogdumoderateur.com/chiffres-google/
+https://proranktracker.com/blog/google-by-the-numbers-amazing-google-stats-and-facts/

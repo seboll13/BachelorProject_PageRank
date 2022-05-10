@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple data visualization</title>
+    <meta charset="utf-8" lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css"/>
+    <style>
+      body {
+        color: #d3d3d3;
+        font: 12pt arial;
+        background-color: #222222;
+      }
+
+      #nw {
+        width: 800px;
+        height: 800px;
+        border: 1px solid #444444;
+        background-color: #222222;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Simulated graph :</h2>
+    <div id="nw"></div>
+    <script>
+      // create an array of nodes
+      var nodes = [
+        {
+          id: 1,
+          label: 'A'
+        }, {
+          id: 2,
+          label: 'B'
+        }, {
+          id: 3,
+          label: 'C'
+        }, {
+          id: 4,
+          label: 'D'
+        }, {
+          id: 5,
+          label: 'E'
+        }
+      ];
+
+      // create an array of edges
+      var edges = [
+        {
+          from: 1,
+          to: 2
+        }, {
+          from: 1,
+          to: 3
+        }, {
+          from: 2,
+          to: 1
+        }, {
+          from: 2,
+          to: 4
+        }, {
+          from: 2,
+          to: 5
+        }, {
+          from: 3,
+          to: 2
+        }, {
+          from: 4,
+          to: 1
+        }, {
+          from: 4,
+          to: 3
+        }, {
+          from: 5,
+          to: 1
+        }, {
+          from: 5,
+          to: 3
+        }, {
+          from: 5,
+          to: 4
+        }
+      ];
+
+      // create a network
+      var container = document.getElementById('nw');
+
+      // provide the data in the vis format
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      // eventual options
+      var options = {
+        nodes: {
+          shape: 'dot',
+          size: 20,
+          font: {
+            size: 24,
+            color: '#ffffff'
+          },
+          borderWidth: 2,
+          shadow: true
+        },
+        // add arrows to create a directional graph
+        edges: {
+          width: 2,
+          shadow: true,
+          arrows: {
+            to: {
+              enabled: true,
+              scaleFactor: .5,
+              type: 'arrow'
+            }
+          }
+        }
+      };
+
+      // initialize network
+      network = new vis.Network(container, data, options);
+      network.setOptions(options);
+    </script>
+  </body>
+</html>
